@@ -103,11 +103,4 @@ for (i in 1:1000) {
 # distribuicao ----------------------------------------------------------------
 
 db$total_roll <- ifelse(db$total_roll == 0, 77, db$total_roll)
-
 hist(db$total_roll, probability = T)
-library(fitdistrplus)
-fit <- fitdist(db$total_roll, distr = 'exp')
-summary(fit)
-gofstat(fit)
-plot(fit)
-barplot(table(db$total_roll))
